@@ -8,7 +8,7 @@ WORKDIR /usr/
 RUN apk add --no-cache build-base python
 # ENV PYTHON /usr/lib/python3.7/site-packages
 
-COPY ./gapi/package*.json /usr/
+COPY package*.json /usr/
 RUN npm install
 
 # Copy source into image.
