@@ -43,13 +43,13 @@ service:
 ingress:
   enabled: true
   annotations: 
-    kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt
+      kubernetes.io/ingress.class: nginx
+      cert-manager.io/cluster-issuer: letsencrypt
   hosts:
     - host: cert-manager-app.mohammedragab.com
       paths: ["/"]
-  tls: []
-     - secretName: my-nodejsapp-cert
+  tls: 
+     - secretName: my-nest-app-tls
        hosts:
          - cert-manager-app.mohammedragab.com
 
