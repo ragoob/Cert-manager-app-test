@@ -1,0 +1,19 @@
+
+FROM node:12.13.0-alpine
+
+
+WORKDIR /usr/
+
+# Installing dependencies.
+RUN apk add --no-cache build-base python
+# ENV PYTHON /usr/lib/python3.7/site-packages
+
+COPY ./gapi/package*.json /usr/
+RUN npm install
+
+# Copy source into image.
+COPY . /usr/
+
+# Exposing ports.
+EXPOSE $PORT
+CMD ["npm", "run", "start"]
